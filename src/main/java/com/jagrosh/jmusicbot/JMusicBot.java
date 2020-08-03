@@ -68,7 +68,7 @@ public class JMusicBot
             }
         
         // get and check latest version
-        String version = OtherUtil.checkVersion(prompt);
+        // String version = OtherUtil.checkVersion(prompt);
         
         // load config
         BotConfig config = new BotConfig(prompt);
@@ -82,7 +82,7 @@ public class JMusicBot
         Bot bot = new Bot(waiter, config, settings);
         
         AboutCommand aboutCommand = new AboutCommand(Color.BLUE.brighter(),
-                                "a music bot that is [easy to host yourself!](https://github.com/jagrosh/MusicBot) (v"+version+")",
+                                "a music bot that is [easy to host yourself!](https://github.com/jagrosh/MusicBot)",
                                 new String[]{"High-quality music playback", "FairQueue™ Technology", "Easy to host yourself"},
                                 RECOMMENDED_PERMS);
         aboutCommand.setIsAuthor(false);
@@ -100,15 +100,17 @@ public class JMusicBot
                 .addCommands(aboutCommand,
                         new PingCommand(),
                         new SettingsCmd(bot),
-                        
+
                         new LyricsCmd(bot),
                         new NowplayingCmd(bot),
                         new PlayCmd(bot),
+                        new LocalPlayCmd(bot),
                         new PlaylistsCmd(bot),
                         new QueueCmd(bot),
                         new RemoveCmd(bot),
                         new SearchCmd(bot),
                         new SCSearchCmd(bot),
+                        new LocalSearchCmd(bot),
                         new ShuffleCmd(bot),
                         new SkipCmd(bot),
 

@@ -90,13 +90,13 @@ public class PlayCmd extends MusicCommand
         event.reply(loadingEmoji+" Loading... `["+args+"]`", m -> bot.getPlayerManager().loadItemOrdered(event.getGuild(), args, new ResultHandler(m,event,false)));
     }
     
-    private class ResultHandler implements AudioLoadResultHandler
+    public class ResultHandler implements AudioLoadResultHandler
     {
         private final Message m;
         private final CommandEvent event;
         private final boolean ytsearch;
         
-        private ResultHandler(Message m, CommandEvent event, boolean ytsearch)
+        ResultHandler(Message m, CommandEvent event, boolean ytsearch)
         {
             this.m = m;
             this.event = event;
